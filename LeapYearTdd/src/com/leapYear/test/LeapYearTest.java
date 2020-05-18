@@ -70,4 +70,25 @@ class LeapYearTest {
 			assertEquals(true, ly.checkLeapYear(2016), "leap Year");
 		}
 	}
+
+	// All years not divisible by 4 are NOT leap years (e.g. 2017, 2018, 2019).
+	@Nested
+	class testNotdivisibleBy4 {
+
+		@Test
+		void test1() {
+			assertEquals(true, ly.checkLeapYear(2017));
+		}
+
+		@Test
+		void test2() {
+			assertEquals(true, ly.checkLeapYear(2018));
+		}
+
+		@Test
+		void test3() {
+			assertEquals(true, ly.checkLeapYear(2019));
+		}
+	}
+
 }
