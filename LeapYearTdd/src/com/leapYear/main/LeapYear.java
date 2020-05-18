@@ -2,9 +2,17 @@ package com.leapYear.main;
 
 public class LeapYear {
 
-	public int checkLeapYear(int str) {
+	boolean flag = false;
 
-		return 0;
+	public boolean checkLeapYear(int year) {
+		if (year % 400 == 0) {
+			flag = true;
+			return flag;
+		} else if (year % 100 == 0) {
+			return flag = false;
+		} else {
+			return false;
+		}
 	}
 
 }
