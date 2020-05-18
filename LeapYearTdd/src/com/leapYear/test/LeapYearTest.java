@@ -27,28 +27,47 @@ class LeapYearTest {
 	// example, 1700, 1800, and 1900 were NOT leap years, NOR will 2100 be a leap
 	// year),
 	@Nested
-	class testWith100NotBy400{
-		
+	class testWith100NotBy400 {
+
 		@Test
 		void test1() {
 			assertEquals(false, ly.checkLeapYear(1700), "failed");
 		}
+
 		@Test
 		void test2() {
 			assertEquals(false, ly.checkLeapYear(1800), "failed");
 		}
+
 		@Test
 		void test3() {
 			assertEquals(false, ly.checkLeapYear(1900), "failed");
 		}
+
 		@Test
 		void test4() {
 			assertEquals(false, ly.checkLeapYear(2100), "failed");
 		}
-
-		
 	}
-	
-	
-	
+
+	// All years divisible by 4 but not by 100 ARE leap years (e.g., 2008, 2012,
+	// 2016),
+	@Nested
+	class testWith4NotBy100 {
+
+		@Test
+		void test1() {
+			assertEquals(true, ly.checkLeapYear(2008), "leap Year");
+		}
+
+		@Test
+		void test2() {
+			assertEquals(true, ly.checkLeapYear(2012), "leap Year");
+		}
+
+		@Test
+		void test3() {
+			assertEquals(true, ly.checkLeapYear(2016), "leap Year");
+		}
+	}
 }
